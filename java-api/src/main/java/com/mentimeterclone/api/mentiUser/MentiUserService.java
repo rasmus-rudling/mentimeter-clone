@@ -9,16 +9,16 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
-@Service public class MentiUserService {
-    private final MentiUserRepository mentiUserRepository;
+@Service public class UserService {
+    private final UserRepository userRepository;
 
 
-    @Autowired public MentiUserService(MentiUserRepository mentiUserRepository) {
-        this.mentiUserRepository = mentiUserRepository;
+    @Autowired public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public Optional<MentiUser> getUser(Long userId) {
-        Optional<MentiUser> userOptional = mentiUserRepository.findById(userId);
+        Optional<MentiUser> userOptional = userRepository.findById(userId);
 
         if (userOptional.isEmpty()) {
             throw new IllegalStateException("User with id " + userId + "does not exist");
@@ -28,12 +28,12 @@ import java.util.regex.Pattern;
     }
 
     public List<MentiUser> getUsers() {
-        return mentiUserRepository.findAll();
+        return userRepository.findAll();
     }
 
     @Transactional
     public void updateUser(Long userId, String username, String email) {
-        MentiUser user = mentiUserRepository.findById(userId).orElseThrow(
+        MentiUser user = userRepository.findById(userId).orElseThrow(
                 () -> new IllegalStateException("Student with id " + userId + "does not exist"));
 
         if (username != null) {

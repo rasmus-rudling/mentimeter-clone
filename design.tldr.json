@@ -2262,7 +2262,7 @@
 						"childIndex": 130,
 						"point": [500.09, 784.44],
 						"rotation": 0,
-						"text": "MentiUser",
+						"text": "User",
 						"style": {
 							"color": "orange",
 							"size": "small",
@@ -2270,7 +2270,7 @@
 							"dash": "draw",
 							"scale": 1.6636156513492422,
 							"font": "mono",
-							"textAlign": "start"
+							"textAlign": "middle"
 						}
 					},
 					"f239ec16-5152-4fa0-16a5-d1e361658fee": {
@@ -2281,7 +2281,7 @@
 						"childIndex": 131,
 						"point": [524.66, 869.88],
 						"rotation": 0,
-						"text": "id        ID\nusername  String\nemail     String",
+						"text": "id        ID\nname      String\nemail     String",
 						"style": {
 							"color": "orange",
 							"size": "small",
