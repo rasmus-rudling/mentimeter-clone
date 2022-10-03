@@ -6,19 +6,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
-public class UserController {
-    private final UserService userService;
+@RequestMapping("/mentiUsers")
+public class MentiUserController {
+    private final MentiUserService mentiUserService;
 
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
+    public MentiUserController(MentiUserService mentiUserService) {
+        this.mentiUserService = mentiUserService;
     }
 
     @GetMapping
-    public List<MentiUser> getUsers() {
-        return userService.getUsers();
+    public String getUsers() {
+        return "Hej";
     }
+
+//    @GetMapping
+//    public List<MentiUser> getUsers() {
+//        return mentiUserService.getUsers();
+//    }
 
     @PutMapping("/{userId}")
     public void updateUser(
@@ -26,6 +31,6 @@ public class UserController {
             @RequestParam(required = false) String username,
             @RequestParam(required = false) String email
                           ) {
-        userService.updateUser(userId, username, email);
+        mentiUserService.updateUser(userId, username, email);
     }
 }

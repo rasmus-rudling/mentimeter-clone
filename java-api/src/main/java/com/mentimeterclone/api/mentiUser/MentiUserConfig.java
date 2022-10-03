@@ -7,9 +7,9 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
 @Configuration
-public class UserConfig {
+public class MentiUserConfig {
     @Bean
-    CommandLineRunner commandLineRunner(UserRepository userRepository) {
+    CommandLineRunner commandLineRunner(MentiUserRepository mentiUserRepository) {
         return args -> {
             MentiUser rasmus = new MentiUser(
                     "Rasmus",
@@ -21,7 +21,7 @@ public class UserConfig {
                     "annalovisaellen@gmail.com"
             );
 
-            userRepository.saveAll(List.of(rasmus, anna));
+            mentiUserRepository.saveAll(List.of(rasmus, anna));
         };
     }
 }
